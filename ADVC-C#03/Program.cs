@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace MyApp
 {
@@ -252,7 +253,28 @@ namespace MyApp
             //}
             #endregion
 
+            #region 10-You have a hashtable with unique values, create a new hashtable where the keys and values are swapped.
 
+            Hashtable original = new Hashtable()
+        {
+            { 1, "Ali" },
+            { 2, "Mona" },
+            { 3, "Omar" }
+        };
+
+            Hashtable swapped = new Hashtable();
+
+            foreach (DictionaryEntry entry in original)
+            {
+                swapped[entry.Value] = entry.Key;
+            }
+
+            Console.WriteLine(" Swapped Hashtable:");
+            foreach (DictionaryEntry entry in swapped)
+            {
+                Console.WriteLine($"Key: {entry.Key}, Value: {entry.Value}");
+            }
+            #endregion
 
 
         }
