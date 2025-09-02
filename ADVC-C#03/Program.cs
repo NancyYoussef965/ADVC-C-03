@@ -116,27 +116,76 @@ namespace MyApp
 
             #region 5-Given an array of integers, check if the array contains any duplicates.
 
-            int[] numbers = { 1, 2, 3, 4, 5, 2 };
+            //int[] numbers = { 1, 2, 3, 4, 5, 2 };
 
-            HashSet<int> seen = new HashSet<int>();
-            bool hasDuplicate = false;
+            //HashSet<int> seen = new HashSet<int>();
+            //bool hasDuplicate = false;
 
-            foreach (int num in numbers)
-            {
-                if (!seen.Add(num)) 
-                {
-                    hasDuplicate = true;
-                    break;
-                }
-            }
+            //foreach (int num in numbers)
+            //{
+            //    if (!seen.Add(num)) 
+            //    {
+            //        hasDuplicate = true;
+            //        break;
+            //    }
+            //}
 
-            if (hasDuplicate)
-                Console.WriteLine("Array contains duplicates.");
-            else
-                Console.WriteLine(" Array does not contain duplicates.");
+            //if (hasDuplicate)
+            //    Console.WriteLine("Array contains duplicates.");
+            //else
+            //    Console.WriteLine(" Array does not contain duplicates.");
 
 
             #endregion
+
+
+
+
+
+            #region 6-Implement a SortedDictionary that stores student IDs (int) and their names (string). Perform operations like adding, removing, and retrieving student names.
+
+
+            SortedDictionary<int, string> students = new SortedDictionary<int, string>();
+
+            students.Add(102, "Ali");
+            students.Add(101, "Mona");
+            students.Add(103, "Sara");
+
+            Console.WriteLine("📚 Students after adding:");
+            PrintStudents(students);
+
+            int searchId = 101;
+            if (students.ContainsKey(searchId))
+            {
+                Console.WriteLine($"\n Student with ID {searchId} is {students[searchId]}");
+            }
+            else
+            {
+                Console.WriteLine($"\nStudent with ID {searchId} not found.");
+            }
+
+            int removeId = 102;
+            if (students.Remove(removeId))
+            {
+                Console.WriteLine($"\n Student with ID {removeId} removed.");
+            }
+
+            Console.WriteLine("\n Students after removing:");
+            PrintStudents(students);
+        }
+
+        static void PrintStudents(SortedDictionary<int, string> dict)
+        {
+            foreach (var kvp in dict)
+            {
+                Console.WriteLine($"ID: {kvp.Key}, Name: {kvp.Value}");
+            }
+
+            #endregion
+
+
+
+
 
         }
     }
