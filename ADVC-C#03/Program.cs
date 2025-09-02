@@ -281,30 +281,55 @@ namespace MyApp
 
             #region 11-Find the union of two sets, returning the unique elements from both sets.
 
-            HashSet<int> set1 = new HashSet<int> { 1, 2, 3, 4 };
-            HashSet<int> set2 = new HashSet<int> { 3, 4, 5, 6 };
+            //HashSet<int> set1 = new HashSet<int> { 1, 2, 3, 4 };
+            //HashSet<int> set2 = new HashSet<int> { 3, 4, 5, 6 };
 
-            HashSet<int> unionSet = new HashSet<int>(set1);
+            //HashSet<int> unionSet = new HashSet<int>(set1);
 
-            unionSet.UnionWith(set2);
+            //unionSet.UnionWith(set2);
 
-            Console.WriteLine(" Union of two sets:");
-            foreach (int num in unionSet)
+            //Console.WriteLine(" Union of two sets:");
+            //foreach (int num in unionSet)
+            //{
+            //    Console.WriteLine(num);
+            //}
+
+            #endregion
+
+
+
+
+
+            #region 12-You have a dictionary with string keys, the user will enter targetChar , count how many keys start with this targetChar.
+
+            Dictionary<string, int> dict = new Dictionary<string, int>()
+        {
+            { "apple", 1 },
+            { "animal", 2 },
+            { "airport", 3 },
+            { "banana", 4 },
+            { "cat", 5 }
+        };
+
+            Console.Write("Enter target character: ");
+            char targetChar = Console.ReadLine()[0]; 
+
+            int count = 0;
+
+            foreach (var key in dict.Keys)
             {
-                Console.WriteLine(num);
+                if (key.StartsWith(targetChar.ToString(), StringComparison.OrdinalIgnoreCase))
+                {
+                    count++;
+                }
             }
 
-            #endregion
-
-
-
-
-
-            #region
+            Console.WriteLine($"\n Number of keys starting with '{targetChar}': {count}");
 
 
 
             #endregion
+
             #region
 
 
