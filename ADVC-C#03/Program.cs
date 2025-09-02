@@ -33,25 +33,62 @@ namespace MyApp
 
             #region 2-You have a hashtable where its values are integers, find the key associated with the highest value.
 
-            Dictionary<string, int> scores = new Dictionary<string, int>()
-            {
+            //Dictionary<string, int> scores = new Dictionary<string, int>()
+            //{
 
-            { "Ali", 85 },
-            { "Mona", 92 },
-            { "Sara", 78 },
-            { "Omar", 95 },
-            { "Nader", 88 }
-            };
+            //{ "Ali", 85 },
+            //{ "Mona", 92 },
+            //{ "Sara", 78 },
+            //{ "Omar", 95 },
+            //{ "Nader", 88 }
+            //};
 
-            var maxEntry = scores.Aggregate((l, r) => l.Value > r.Value ? l : r);
+            //var maxEntry = scores.Aggregate((l, r) => l.Value > r.Value ? l : r);
 
-            Console.WriteLine($" The highest score is {maxEntry.Value}, by {maxEntry.Key}");
+            //Console.WriteLine($" The highest score is {maxEntry.Value}, by {maxEntry.Key}");
 
 
 
 
             #endregion
 
+
+
+            #region 3-You have a hashtable , the  user will enter targetValue find all keys that associated with a specific targetValue
+
+            Dictionary<string, string> fruits = new Dictionary<string, string>
+{
+    { "key1", "apple" },
+    { "key2", "banana" },
+    { "key3", "apple" }
+};
+
+            Console.Write("Enter target value: ");
+            string targetValue = Console.ReadLine();
+            bool found = false;
+            foreach (var Kvp in fruits)
+
+            {
+
+
+                if (Kvp.Value==targetValue)
+               
+                
+                {
+                    Console.WriteLine(Kvp.Key);
+                    found = true;
+
+                    
+                }
+
+            }
+            if (!found)
+            {
+                Console.WriteLine("Key not found");
+
+            }
+
+            #endregion
 
 
 
