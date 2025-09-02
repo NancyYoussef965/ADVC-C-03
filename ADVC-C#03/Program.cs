@@ -92,29 +92,51 @@ namespace MyApp
 
 
             #region 4-Given an array of strings, group anagrams together.
-            string[] words = { "eat", "tea", "tan", "ate", "nat", "bat" };
-           Dictionary<string , List<string>> groups= new Dictionary<string , List<string>>();
+            // string[] words = { "eat", "tea", "tan", "ate", "nat", "bat" };
+            //Dictionary<string , List<string>> groups= new Dictionary<string , List<string>>();
 
-            foreach (string word in words) 
+            // foreach (string word in words) 
 
-            {
-                string sorted = String.Concat(word.OrderBy(c => c));
+            // {
+            //     string sorted = String.Concat(word.OrderBy(c => c));
 
-                if (!groups.ContainsKey(sorted))
-                {
-                    groups[sorted] = new List<string>();
-                }
+            //     if (!groups.ContainsKey(sorted))
+            //     {
+            //         groups[sorted] = new List<string>();
+            //     }
 
-                groups[sorted].Add(word);
-            }
-            Console.WriteLine(" Grouped Anagrams:");
-            foreach (var group in groups.Values)
-            {
-                Console.WriteLine($"[{string.Join(", ", group)}]");
-            }
+            //     groups[sorted].Add(word);
+            // }
+            // Console.WriteLine(" Grouped Anagrams:");
+            // foreach (var group in groups.Values)
+            // {
+            //     Console.WriteLine($"[{string.Join(", ", group)}]");
+            // }
             #endregion
 
+            #region 5-Given an array of integers, check if the array contains any duplicates.
 
+            int[] numbers = { 1, 2, 3, 4, 5, 2 };
+
+            HashSet<int> seen = new HashSet<int>();
+            bool hasDuplicate = false;
+
+            foreach (int num in numbers)
+            {
+                if (!seen.Add(num)) 
+                {
+                    hasDuplicate = true;
+                    break;
+                }
+            }
+
+            if (hasDuplicate)
+                Console.WriteLine("Array contains duplicates.");
+            else
+                Console.WriteLine(" Array does not contain duplicates.");
+
+
+            #endregion
 
         }
     }
