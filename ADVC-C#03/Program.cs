@@ -145,44 +145,81 @@ namespace MyApp
             #region 6-Implement a SortedDictionary that stores student IDs (int) and their names (string). Perform operations like adding, removing, and retrieving student names.
 
 
-            SortedDictionary<int, string> students = new SortedDictionary<int, string>();
+            //    SortedDictionary<int, string> students = new SortedDictionary<int, string>();
 
-            students.Add(102, "Ali");
-            students.Add(101, "Mona");
-            students.Add(103, "Sara");
+            //    students.Add(102, "Ali");
+            //    students.Add(101, "Mona");
+            //    students.Add(103, "Sara");
 
-            Console.WriteLine("📚 Students after adding:");
-            PrintStudents(students);
+            //    Console.WriteLine("\n Students after adding:");
+            //    PrintStudents(students);
 
-            int searchId = 101;
-            if (students.ContainsKey(searchId))
-            {
-                Console.WriteLine($"\n Student with ID {searchId} is {students[searchId]}");
-            }
-            else
-            {
-                Console.WriteLine($"\nStudent with ID {searchId} not found.");
-            }
+            //    int searchId = 101;
+            //    if (students.ContainsKey(searchId))
+            //    {
+            //        Console.WriteLine($"\n Student with ID {searchId} is {students[searchId]}");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"\nStudent with ID {searchId} not found.");
+            //    }
 
-            int removeId = 102;
-            if (students.Remove(removeId))
-            {
-                Console.WriteLine($"\n Student with ID {removeId} removed.");
-            }
+            //    int removeId = 102;
+            //    if (students.Remove(removeId))
+            //    {
+            //        Console.WriteLine($"\n Student with ID {removeId} removed.");
+            //    }
 
-            Console.WriteLine("\n Students after removing:");
-            PrintStudents(students);
-        }
+            //    Console.WriteLine("\n Students after removing:");
+            //    PrintStudents(students);
+            //}
 
-        static void PrintStudents(SortedDictionary<int, string> dict)
-        {
-            foreach (var kvp in dict)
-            {
-                Console.WriteLine($"ID: {kvp.Key}, Name: {kvp.Value}");
-            }
+            //static void PrintStudents(SortedDictionary<int, string> dict)
+            //{
+            //    foreach (var kvp in dict)
+            //    {
+            //        Console.WriteLine($"ID: {kvp.Key}, Name: {kvp.Value}");
+            //    }
 
             #endregion
 
+            #region 7-Create an employee directory where employee IDs (int) are keys and employee names (string) are values. Use a SortedList to manage and retrieve employees in order of their IDs.
+            SortedList<int, string> employees = new SortedList<int, string>();
+
+            employees.Add(103, "Sara");
+            employees.Add(101, "Ali");
+            employees.Add(105, "Omar");
+            employees.Add(102, "Mona");
+
+            Console.WriteLine(" Employee Directory:");
+            PrintEmployees(employees);
+
+            int searchId = 102;
+            if (employees.ContainsKey(searchId))
+            {
+                Console.WriteLine($"\nEmployee with ID {searchId}: {employees[searchId]}");
+            }
+            else
+            {
+                Console.WriteLine($"\n Employee with ID {searchId} not found.");
+            }
+
+            employees[103] = "Sarah Ahmed"; 
+            Console.WriteLine("\nAfter updating employee 103:");
+            PrintEmployees(employees);
+
+            employees.Remove(105);
+            Console.WriteLine("\n After removing employee 105:");
+            PrintEmployees(employees);
+        }
+
+        static void PrintEmployees(SortedList<int, string> list)
+        {
+            foreach (var kvp in list)
+            {
+                Console.WriteLine($"ID: {kvp.Key}, Name: {kvp.Value}");
+            }
+            #endregion
 
 
 
