@@ -223,21 +223,37 @@ namespace MyApp
 
 
             #region 8-Given an array of integers from 1 to N with some numbers missing, find the missing numbers.
-            int N = 10; 
-            int[] arr = { 1, 2, 4, 6, 7, 10 }; 
+            //int N = 10; 
+            //int[] arr = { 1, 2, 4, 6, 7, 10 }; 
 
-            HashSet<int> present = new HashSet<int>(arr);
+            //HashSet<int> present = new HashSet<int>(arr);
 
-            Console.WriteLine(" Missing numbers:");
-            for (int i = 1; i <= N; i++)
-            {
-                if (!present.Contains(i))
-                {
-                    Console.WriteLine(i);
-                }
-            }
+            //Console.WriteLine(" Missing numbers:");
+            //for (int i = 1; i <= N; i++)
+            //{
+            //    if (!present.Contains(i))
+            //    {
+            //        Console.WriteLine(i);
+            //    }
+            //}
 
             #endregion
+
+            #region 9-You  have a list of integers with possible duplicates, create a HashSet that contains only unique values.
+
+            //List<int> numbers = new List<int> { 1, 2, 3, 2, 4, 5, 3, 1, 6 };
+
+            //HashSet<int> uniqueNumbers = new HashSet<int>(numbers);
+
+            //Console.WriteLine(" Unique values:");
+            //foreach (int num in uniqueNumbers)
+            //{
+            //    Console.WriteLine(num);
+            //}
+            #endregion
+
+
+
 
         }
     }
