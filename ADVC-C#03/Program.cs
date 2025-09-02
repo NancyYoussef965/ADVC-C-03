@@ -184,45 +184,60 @@ namespace MyApp
             #endregion
 
             #region 7-Create an employee directory where employee IDs (int) are keys and employee names (string) are values. Use a SortedList to manage and retrieve employees in order of their IDs.
-            SortedList<int, string> employees = new SortedList<int, string>();
+            //    SortedList<int, string> employees = new SortedList<int, string>();
 
-            employees.Add(103, "Sara");
-            employees.Add(101, "Ali");
-            employees.Add(105, "Omar");
-            employees.Add(102, "Mona");
+            //    employees.Add(103, "Sara");
+            //    employees.Add(101, "Ali");
+            //    employees.Add(105, "Omar");
+            //    employees.Add(102, "Mona");
 
-            Console.WriteLine(" Employee Directory:");
-            PrintEmployees(employees);
+            //    Console.WriteLine(" Employee Directory:");
+            //    PrintEmployees(employees);
 
-            int searchId = 102;
-            if (employees.ContainsKey(searchId))
-            {
-                Console.WriteLine($"\nEmployee with ID {searchId}: {employees[searchId]}");
-            }
-            else
-            {
-                Console.WriteLine($"\n Employee with ID {searchId} not found.");
-            }
+            //    int searchId = 102;
+            //    if (employees.ContainsKey(searchId))
+            //    {
+            //        Console.WriteLine($"\nEmployee with ID {searchId}: {employees[searchId]}");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"\n Employee with ID {searchId} not found.");
+            //    }
 
-            employees[103] = "Sarah Ahmed"; 
-            Console.WriteLine("\nAfter updating employee 103:");
-            PrintEmployees(employees);
+            //    employees[103] = "Sarah Ahmed"; 
+            //    Console.WriteLine("\nAfter updating employee 103:");
+            //    PrintEmployees(employees);
 
-            employees.Remove(105);
-            Console.WriteLine("\n After removing employee 105:");
-            PrintEmployees(employees);
-        }
+            //    employees.Remove(105);
+            //    Console.WriteLine("\n After removing employee 105:");
+            //    PrintEmployees(employees);
+            //}
 
-        static void PrintEmployees(SortedList<int, string> list)
-        {
-            foreach (var kvp in list)
-            {
-                Console.WriteLine($"ID: {kvp.Key}, Name: {kvp.Value}");
-            }
+            //static void PrintEmployees(SortedList<int, string> list)
+            //{
+            //    foreach (var kvp in list)
+            //    {
+            //        Console.WriteLine($"ID: {kvp.Key}, Name: {kvp.Value}");
+            //    }
             #endregion
 
 
+            #region 8-Given an array of integers from 1 to N with some numbers missing, find the missing numbers.
+            int N = 10; 
+            int[] arr = { 1, 2, 4, 6, 7, 10 }; 
 
+            HashSet<int> present = new HashSet<int>(arr);
+
+            Console.WriteLine(" Missing numbers:");
+            for (int i = 1; i <= N; i++)
+            {
+                if (!present.Contains(i))
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+            #endregion
 
         }
     }
