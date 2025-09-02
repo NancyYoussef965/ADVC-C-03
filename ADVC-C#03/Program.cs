@@ -331,43 +331,61 @@ namespace MyApp
             #endregion
 
             #region 13-You have a sorted set , user will enter an integer target, find all elements that is greater than target and add them in list.
-            SortedSet<int> numbers = new SortedSet<int> { 2, 5, 7, 10, 15, 20 };
+            //SortedSet<int> numbers = new SortedSet<int> { 2, 5, 7, 10, 15, 20 };
 
-            Console.Write("Enter target number: ");
-            int target = int.Parse(Console.ReadLine());
+            //Console.Write("Enter target number: ");
+            //int target = int.Parse(Console.ReadLine());
 
-            List<int> greaterNumbers = new List<int>();
+            //List<int> greaterNumbers = new List<int>();
 
-            foreach (int num in numbers)
+            //foreach (int num in numbers)
+            //{
+            //    if (num > target)
+            //    {
+            //        greaterNumbers.Add(num);
+            //    }
+            //}
+
+            //Console.WriteLine($"\n Elements greater than {target}:");
+            //if (greaterNumbers.Count > 0)
+            //{
+            //    Console.WriteLine(string.Join(", ", greaterNumbers));
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No elements greater than target.");
+            //}
+
+
+            #endregion
+
+
+            #region 14-You have a sorted list with integer values, find all the keys associated with even values.
+
+            SortedList<int, int> numbers = new SortedList<int, int>
+        {
+            { 1, 5 },
+            { 2, 8 },
+            { 3, 11 },
+            { 4, 14 },
+            { 5, 7 }
+        };
+
+            Console.WriteLine("🔎 Keys with even values:");
+
+            foreach (var kvp in numbers)
             {
-                if (num > target)
+                if (kvp.Value % 2 == 0)
                 {
-                    greaterNumbers.Add(num);
+                    Console.WriteLine(kvp.Key);
                 }
+                #endregion
+
+
+
+
+
             }
-
-            Console.WriteLine($"\n Elements greater than {target}:");
-            if (greaterNumbers.Count > 0)
-            {
-                Console.WriteLine(string.Join(", ", greaterNumbers));
-            }
-            else
-            {
-                Console.WriteLine("No elements greater than target.");
-            }
-
-
-            #endregion
-            #region
-
-
-
-            #endregion
-
-
-
-
-
         }
     }
 }
