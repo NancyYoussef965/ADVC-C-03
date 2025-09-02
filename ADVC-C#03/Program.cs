@@ -255,26 +255,69 @@ namespace MyApp
 
             #region 10-You have a hashtable with unique values, create a new hashtable where the keys and values are swapped.
 
-            Hashtable original = new Hashtable()
-        {
-            { 1, "Ali" },
-            { 2, "Mona" },
-            { 3, "Omar" }
-        };
+            //    Hashtable original = new Hashtable()
+            //{
+            //    { 1, "Ali" },
+            //    { 2, "Mona" },
+            //    { 3, "Omar" }
+            //};
 
-            Hashtable swapped = new Hashtable();
+            //    Hashtable swapped = new Hashtable();
 
-            foreach (DictionaryEntry entry in original)
-            {
-                swapped[entry.Value] = entry.Key;
-            }
+            //    foreach (DictionaryEntry entry in original)
+            //    {
+            //        swapped[entry.Value] = entry.Key;
+            //    }
 
-            Console.WriteLine(" Swapped Hashtable:");
-            foreach (DictionaryEntry entry in swapped)
-            {
-                Console.WriteLine($"Key: {entry.Key}, Value: {entry.Value}");
-            }
+            //    Console.WriteLine(" Swapped Hashtable:");
+            //    foreach (DictionaryEntry entry in swapped)
+            //    {
+            //        Console.WriteLine($"Key: {entry.Key}, Value: {entry.Value}");
+            //    }
             #endregion
+
+
+
+
+            #region 11-Find the union of two sets, returning the unique elements from both sets.
+
+            HashSet<int> set1 = new HashSet<int> { 1, 2, 3, 4 };
+            HashSet<int> set2 = new HashSet<int> { 3, 4, 5, 6 };
+
+            HashSet<int> unionSet = new HashSet<int>(set1);
+
+            unionSet.UnionWith(set2);
+
+            Console.WriteLine(" Union of two sets:");
+            foreach (int num in unionSet)
+            {
+                Console.WriteLine(num);
+            }
+
+            #endregion
+
+
+
+
+
+            #region
+
+
+
+            #endregion
+            #region
+
+
+
+            #endregion
+            #region
+
+
+
+            #endregion
+
+
+
 
 
         }
