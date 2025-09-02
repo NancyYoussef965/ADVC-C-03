@@ -302,36 +302,59 @@ namespace MyApp
 
             #region 12-You have a dictionary with string keys, the user will enter targetChar , count how many keys start with this targetChar.
 
-            Dictionary<string, int> dict = new Dictionary<string, int>()
-        {
-            { "apple", 1 },
-            { "animal", 2 },
-            { "airport", 3 },
-            { "banana", 4 },
-            { "cat", 5 }
-        };
+            //    Dictionary<string, int> dict = new Dictionary<string, int>()
+            //{
+            //    { "apple", 1 },
+            //    { "animal", 2 },
+            //    { "airport", 3 },
+            //    { "banana", 4 },
+            //    { "cat", 5 }
+            //};
 
-            Console.Write("Enter target character: ");
-            char targetChar = Console.ReadLine()[0]; 
+            //    Console.Write("Enter target character: ");
+            //    char targetChar = Console.ReadLine()[0]; 
 
-            int count = 0;
+            //    int count = 0;
 
-            foreach (var key in dict.Keys)
-            {
-                if (key.StartsWith(targetChar.ToString(), StringComparison.OrdinalIgnoreCase))
-                {
-                    count++;
-                }
-            }
+            //    foreach (var key in dict.Keys)
+            //    {
+            //        if (key.StartsWith(targetChar.ToString(), StringComparison.OrdinalIgnoreCase))
+            //        {
+            //            count++;
+            //        }
+            //    }
 
-            Console.WriteLine($"\n Number of keys starting with '{targetChar}': {count}");
+            //    Console.WriteLine($"\n Number of keys starting with '{targetChar}': {count}");
 
 
 
             #endregion
 
-            #region
+            #region 13-You have a sorted set , user will enter an integer target, find all elements that is greater than target and add them in list.
+            SortedSet<int> numbers = new SortedSet<int> { 2, 5, 7, 10, 15, 20 };
 
+            Console.Write("Enter target number: ");
+            int target = int.Parse(Console.ReadLine());
+
+            List<int> greaterNumbers = new List<int>();
+
+            foreach (int num in numbers)
+            {
+                if (num > target)
+                {
+                    greaterNumbers.Add(num);
+                }
+            }
+
+            Console.WriteLine($"\n Elements greater than {target}:");
+            if (greaterNumbers.Count > 0)
+            {
+                Console.WriteLine(string.Join(", ", greaterNumbers));
+            }
+            else
+            {
+                Console.WriteLine("No elements greater than target.");
+            }
 
 
             #endregion
