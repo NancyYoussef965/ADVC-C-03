@@ -56,40 +56,63 @@ namespace MyApp
 
             #region 3-You have a hashtable , the  user will enter targetValue find all keys that associated with a specific targetValue
 
-            Dictionary<string, string> fruits = new Dictionary<string, string>
-{
-    { "key1", "apple" },
-    { "key2", "banana" },
-    { "key3", "apple" }
-};
+            //            Dictionary<string, string> fruits = new Dictionary<string, string>
+            //{
+            //    { "key1", "apple" },
+            //    { "key2", "banana" },
+            //    { "key3", "apple" }
+            //};
 
-            Console.Write("Enter target value: ");
-            string targetValue = Console.ReadLine();
-            bool found = false;
-            foreach (var Kvp in fruits)
+            //            Console.Write("Enter target value: ");
+            //            string targetValue = Console.ReadLine();
+            //            bool found = false;
+            //            foreach (var Kvp in fruits)
 
-            {
+            //            {
 
 
-                if (Kvp.Value==targetValue)
-               
-                
-                {
-                    Console.WriteLine(Kvp.Key);
-                    found = true;
+            //                if (Kvp.Value==targetValue)
 
-                    
-                }
 
-            }
-            if (!found)
-            {
-                Console.WriteLine("Key not found");
+            //                {
+            //                    Console.WriteLine(Kvp.Key);
+            //                    found = true;
 
-            }
+
+            //                }
+
+            //            }
+            //            if (!found)
+            //            {
+            //                Console.WriteLine("Key not found");
+
+            //            }
 
             #endregion
 
+
+            #region 4-Given an array of strings, group anagrams together.
+            string[] words = { "eat", "tea", "tan", "ate", "nat", "bat" };
+           Dictionary<string , List<string>> groups= new Dictionary<string , List<string>>();
+
+            foreach (string word in words) 
+
+            {
+                string sorted = String.Concat(word.OrderBy(c => c));
+
+                if (!groups.ContainsKey(sorted))
+                {
+                    groups[sorted] = new List<string>();
+                }
+
+                groups[sorted].Add(word);
+            }
+            Console.WriteLine(" Grouped Anagrams:");
+            foreach (var group in groups.Values)
+            {
+                Console.WriteLine($"[{string.Join(", ", group)}]");
+            }
+            #endregion
 
 
 
